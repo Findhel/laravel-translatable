@@ -32,7 +32,7 @@ class LaravelTranslatableServiceProvider extends ServiceProvider
             $this->foreign($columnParentId)
                 ->references($columnId)
                 ->on($this->getTable())
-                ->onDelete('set null');
+                ->onDelete('restrict');
         });
 
         Blueprint::macro('dropTranslatable', function ($columnLocale = 'locale', $columnParentId = 'locale_parent_id') {
